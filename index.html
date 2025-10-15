@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA @OWISP</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* NAVIGATION */
+        #navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: coral;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            font-weight: 600;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        #navigation #name {
+            margin: 0;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        #navlinks {
+            display: flex;
+            gap: 30px;
+            margin-right: 20px;
+            flex-wrap: nowrap;
+        }
+
+        #navlinks a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        #navlinks a:hover {
+            color: yellow;
+        }
+
+        #aboutus, #leader, #partner, #joinus, #vandm {
+            scroll-margin-top: 80px;
+        }
+
+        /* CLUB IMAGE & NAMEBOX */
+        #clubimage {
+            position: relative;
+            width: 100vw;
+            height: 300px;
+            display: flex;            
+            justify-content: center;  
+            align-items: center;
+            overflow: hidden;
+            margin-left: calc(-50vw + 50%);
+            margin-top: 60px;
+        }
+
+        #clubimage::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('sample.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(1px);
+        }
+
+        #namebox {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background-image: linear-gradient(to right, blue, red);
+            border-radius: 20px;
+            width: 100px; 
+            height: 40px;
+            padding: 0 10px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            transition: width 0.3s ease, border-radius 0.3s ease; 
+        }
+
+        #shortform, #fullform {
+            position: absolute; 
+            font-family: 'Fredoka', sans-serif;
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+
+        #shortform {
+            opacity: 1;
+            color: white;
+        }
+
+        #fullform { 
+            opacity: 0; 
+            color: white;
+        }
+        
+        #namebox:hover {
+            width: 400px;
+            border-radius: 40px;
+        }
+
+        #namebox:hover #shortform { opacity: 0; }
+        #namebox:hover #fullform { opacity: 1; }
+
+        /* CONTENT */
+        #content {
+            margin-left: max(20px, 2vw);
+            margin-right: max(20px, 2vw);
+            margin-top: 40px;
+        }
+
+        .subheading {
+            font-weight: bold;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 25px 0;
+            line-height: 1.7;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.05rem;
+            color: #222;
+        }
+
+        /*EXTRA STYLING FOR LEADER STYLE USING ELEMENTS*/
+        
+        #aboutnova .leaderid{
+            width: 280px;          
+            padding: 25px;
+        }
+
+        #aboutnova .leader-name{
+            font-size: 1.3rem;
+        }
+
+        #aboutnova .leader-role{
+            font-size: 1.05rem;
+        }
+
+        /* LEADERS */
+        #leaders {
+            margin-top: 40px;
+        }
+
+        .leader-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        @keyframes fadeUp {
+            from { 
+                opacity: 0; 
+                transform: 
+                translateY(40px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .leaderid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            width: 220px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 3px solid transparent;
+            opacity: 0;
+        }
+
+        .leaderid:hover {
+            transform: translateY(-10px) scale(1.03);
+            border: 3px solid #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+
+        .leader-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #3b82f6;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .leaderid:hover .leader-img {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+        }
+        
+        .leader-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 8px 0 4px 0;
+        }
+        
+        .leader-role {
+            color: gray;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <div id="navigation">
+        <p id="name">NOVA</p>
+        <div id="navlinks">
+            <a href="#aboutus">About Us</a>
+            <a href="#vandm">Vision & Mission</a>
+            <a href="#leader">Our Leaders</a>
+            <a href="#partner">Our Partners</a>
+            <a href="#joinus">Join us now!</a>
+        </div>
+    </div>
+
+    <!-- CLUB IMAGE -->
+    <div id="clubimage">
+        <div id="namebox">
+            <span id="shortform">NOVA</span>
+            <span id="fullform">Network Of Virtual Aces</span>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content">
+        <!--ABOUT-->
+        <div id="aboutnova">
+            <h2 class="subheading" id="aboutus">About NOVA</h2>
+            <div class="leader-container">
+                <!-- About Us Card -->
+                <div class="leaderid">
+                    <h3 class="leader-name">Who We Are</h3>
+                    <p class="leader-role">
+                        NOVA (Network Of Virtual Aces) is a <b>coding club</b> at <b>One World International School Punggol</b>. We welcome coders of all skill levels to build <span style="color: firebrick; font-weight: bolder;">cool</span> projects, experiment, and collaborate.
+                    </p>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="leaderid">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#3b82f6" stroke-width="2" width="35" height="35">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        <circle cx="12" cy="12" r="3" stroke="#3b82f6" stroke-width="2"/>
+                    </svg>
+                    <h3 class="leader-name">Vision</h3>
+                    <p class="leader-role">Empower students to create, code, and innovate using technology.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="leaderid">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#3b82f6" stroke-width="2" width="35" height="35">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7a5 5 0 1 0 5 5"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 3.055a9 9 0 1 0 7.941 7.945"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 6v3h3l3-3h-3v-3z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 9l-3 3"/>
+                    </svg>
+                    <h3 class="leader-name">Mission</h3>
+                    <p class="leader-role">Teach coding and tech skills in a hands-on, practical way.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--LEADERS-->
+        <div id="leaders">
+            <h2 class="subheading" id="leader">Our Leaders</h2>
+            <div class="leader-container">
+                <div class="leaderid">
+                    <img src="ashlesh.jpg" alt="Ashlesh Deshmukh" class="leader-img">
+                    <h3 class="leader-name">Ashlesh Deshmukh</h3>
+                    <p class="leader-role">President and Head of Events</p>
+                </div>
+                <div class="leaderid">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Krithish Prabhu" class="leader-img">
+                    <h3 class="leader-name">Krithish Prabhu</h3>
+                    <p class="leader-role">Secretary and Head of Web Development</p>
+                </div>
+                <div class="leaderid">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Shaurya Upadhyaya" class="leader-img">
+                    <h3 class="leader-name">Shaurya Upadhyaya</h3>
+                    <p class="leader-role">Head of Web Development</p>
+                </div>
+                <div class="leaderid">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Tanay Sivakumar" class="leader-img">
+                    <h3 class="leader-name">Tanay Sivakumar</h3>
+                    <p class="leader-role">Head of Game Development</p>
+                </div>
+                <div class="leaderid">
+                    <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="Ms. Nathiya" class="leader-img">
+                    <h3 class="leader-name">Ms. Nathiya</h3> 
+                    <p class="leader-role">Teacher Advisor</p>
+                </div>
+            </div>
+        </div>
+        <!--PARTNERS-->
+        <div id="partners">
+            <h2 class="subheading">Our Partners</h2>
+            <div class="partner-container">
+                <!--HACKCLUB-->
+                <div class="partner-card" id="hackclub">
+                    <img src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club Logo">
+                    <h3>Hack Club</h3>
+                </div>
+                <div class="partner-card" id="owis">
+                    <img src="owis.jpeg" alt="OWIS Logo">
+                    <h3>OWIS School</h3>
+                </div>
+            </div>
+        </div>
+        <div id="laser"></div>
+        <div id="join">
+            <h2 class="subheading">Join us now!</h2>
+        </div>
+    </div>
+
+    <script>
+        const leaders = document.querySelectorAll('.leaderid');
+        leaders.forEach((leader, index) => {
+            leader.style.animation = 'fadeUp 0.8s ease forwards';
+            leader.style.animationDelay = `${index * 0.3}s`;
+        });
+    </script>
+</body>
+</html>
