@@ -32,4 +32,4 @@ _**Day 5**_
 - Major Update.
     - Fixed a few bugs within the card styling
     - Built 2 cards for 'Our Partners' Section one with Hack Club and one for my school
-    - ```<!--As of Wednesday 15 October 2025 3:07pm UTC, cool animations for such are being developed-->```
+    - ```<!--As of Wednesday 15 October 2025 3:07pm UTC, cool animations for such are not going to be developed-->```
