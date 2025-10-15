@@ -240,6 +240,60 @@
             font-size: 0.95rem;
             margin: 0;
         }
+
+        /*PARNTERS*/
+        .partner-container{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .partner-card{
+            width: 200px;
+            height: 250px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            perspective: 1000px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .partner-card img{
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .partner-card h3{
+            margin: 0;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .partner-card:hover{
+            transform: rotate(-15deg) scale(1.05);
+            box-shadow: 0 12px 20px rgba(59, 130, 246, 0.5);
+        }
+
+        #laser{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 0;
+            background-color: red;
+            pointer-events: none;
+            transition: all 0.1s linear;
+        }
     </style>
 </head>
 <body>
@@ -355,11 +409,32 @@
     </div>
 
     <script>
+        /* FADE UP ON LOAD ANIMATION */
         const leaders = document.querySelectorAll('.leaderid');
         leaders.forEach((leader, index) => {
             leader.style.animation = 'fadeUp 0.8s ease forwards';
             leader.style.animationDelay = `${index * 0.3}s`;
         });
+
+        /*PARTNER LASER THINGY ANIMATION*/
+        const laser = document.getElementById('laser');
+        const cards = document.getElementById('.partner-card');
+
+        cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            laser.style.height = '100vh'; // laser appears from top
+            laser.style.display = 'block';
+        });
+        
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            laser.style.left = `${rect.left + rect.width/2}px`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            laser.style.height = '0';
+        });
+    });
     </script>
 </body>
 </html>
