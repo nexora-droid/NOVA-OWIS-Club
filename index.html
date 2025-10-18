@@ -151,8 +151,7 @@
             color: #222;
         }
 
-        /*EXTRA STYLING FOR LEADER STYLE USING ELEMENTS*/
-        
+        /* EXTRA STYLING FOR LEADER STYLE */
         #aboutnova .leaderid{
             width: 280px;          
             padding: 25px;
@@ -183,8 +182,7 @@
         @keyframes fadeUp {
             from { 
                 opacity: 0; 
-                transform: 
-                translateY(40px); 
+                transform: translateY(40px); 
             }
             to { 
                 opacity: 1; 
@@ -209,7 +207,7 @@
         }
 
         .leaderid:hover {
-            transform: translateY(-10px) scale(1.03);
+            transform: scale(1.03) translateY(-10px);
             border: 3px solid #3b82f6;
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
         }
@@ -241,7 +239,7 @@
             margin: 0;
         }
 
-        /*PARNTERS*/
+        /* PARTNERS */
         .partner-container{
             display: flex;
             justify-content: center;
@@ -260,7 +258,6 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
-            perspective: 1000px;
             position: relative;
             cursor: pointer;
         }
@@ -279,20 +276,30 @@
             color: #333;
         }
 
-        .partner-card:hover{
-            transform: rotate(-15deg) scale(1.05);
+        .partner-card:hover {
+            transform: scale(1.05); /* smooth scale on hover */
             box-shadow: 0 12px 20px rgba(59, 130, 246, 0.5);
         }
 
-        #laser{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 2px;
-            height: 0;
-            background-color: red;
-            pointer-events: none;
-            transition: all 0.1s linear;
+        #hackclublink {
+            text-decoration: none;
+        }
+
+        #hackclublink:hover {
+            text-decoration: none;
+        }
+
+        #form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #form iframe {
+            width: 90%;
+            max-width: 600px;
+            height: 600px;
         }
     </style>
 </head>
@@ -304,8 +311,8 @@
             <a href="#aboutus">About Us</a>
             <a href="#vandm">Vision & Mission</a>
             <a href="#leader">Our Leaders</a>
-            <a href="#partner">Our Partners</a>
-            <a href="#joinus">Join us now!</a>
+            <a href="#partners">Our Partners</a>
+            <a href="#join">Join us now!</a>
         </div>
     </div>
 
@@ -387,24 +394,37 @@
                 </div>
             </div>
         </div>
+
         <!--PARTNERS-->
         <div id="partners">
             <h2 class="subheading">Our Partners</h2>
             <div class="partner-container">
                 <!--HACKCLUB-->
+                <a href="https://www.hackclub.com" target="_blank" id="hackclublink">
                 <div class="partner-card" id="hackclub">
                     <img src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club Logo">
                     <h3>Hack Club</h3>
                 </div>
+                </a>
+                <!--OWIS-->
                 <div class="partner-card" id="owis">
                     <img src="owis.jpeg" alt="OWIS Logo">
-                    <h3>OWIS School</h3>
+                    <h3>OWIS (School)</h3>
                 </div>
             </div>
         </div>
-        <div id="laser"></div>
+
         <div id="join">
             <h2 class="subheading">Join us now!</h2>
+            <div id="form">
+                <iframe
+                    src="https://owistechclub.fillout.com/t/jW5C1X7sKrus"
+                    width="500px"
+                    height="500px"
+                    frameborder="0"
+                    style="border-radius: 12px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);">
+                </iframe>
+            </div>
         </div>
     </div>
 
@@ -415,26 +435,6 @@
             leader.style.animation = 'fadeUp 0.8s ease forwards';
             leader.style.animationDelay = `${index * 0.3}s`;
         });
-
-        /*PARTNER LASER THINGY ANIMATION*/
-        const laser = document.getElementById('laser');
-        const cards = document.getElementById('.partner-card');
-
-        cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            laser.style.height = '100vh'; // laser appears from top
-            laser.style.display = 'block';
-        });
-        
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            laser.style.left = `${rect.left + rect.width/2}px`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            laser.style.height = '0';
-        });
-    });
     </script>
 </body>
 </html>
