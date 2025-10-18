@@ -2,12 +2,15 @@
 
 This is the official Github Repository for NOVA, OWIS's tech and coding club.
 
+```<!---More descriptions to be added soon--->```
+
 ## Features
 ```<!---TO BE ADDED--->```
 
 ## Note to HackClub Fraud Team
 
-I just realised that we need to put regular commits after around 30mins-1hr of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos)
+I realised pretty late that we need to put regular commits after around 30mins-1hr of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos).
+Also everything after day 5 is through my commits.
 
 ### Logs of Updates/Days Spent Coding
 _**Day 1**_
@@ -29,7 +32,6 @@ _**Day 4**_
 - Pretty easy as I just resued the styles
 
 _**Day 5**_
-- Major Update.
-    - Fixed a few bugs within the card styling
-    - Built 2 cards for 'Our Partners' Section one with Hack Club and one for my school
-    - ```<!--As of Wednesday 15 October 2025 3:07pm UTC, cool animations for such are not going to be developed-->```
+- Fixed a few bugs within the card styling
+- Built 2 cards for 'Our Partners' Section one with Hack Club and one for my school
+- ```<!--As of Wednesday 15 October 2025 3:07pm UTC, cool animations which were planned for such are not going to be developed-->```
