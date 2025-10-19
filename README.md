@@ -2,23 +2,21 @@
 
 This is the official Github Repository for NOVA, OWIS's tech and coding club.
 
-```<!---More descriptions to be added soon--->```
-
 ## Features
 ```<!---TO BE ADDED--->```
 
 ## Note to HackClub Fraud Team
 
-I realised pretty late that we need to put regular commits after around 30mins-1hr of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos).
-Also everything after day 5 is through my commits.
+I just realised that we need to put regular commits after around 30mins-1hr of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos)
 
 ### Logs of Updates/Days Spent Coding
 _**Day 1**_
-- Spend around 45 minutes building a feature where when you hover on the name of the club it shows the full form and when you don't hover it shows the short form.
-- Spent around 15 minutes building the basic layout with headings for the content to be added in the coming days.
+- Spend around 30-35 minutes building a feature where when you hover on the name of the club it shows the full form and when you don't hover it shows the short form. (time may be inaccurate)
+- Spent around 10 minutes building the basic layout with headings for the content to be added in the coming days.
 
 
 _**Day 2**_
+- Deleted everything and rebuilt the website (only 40 mins were spent on day 1 if I'm not wrong)
 - Spent around 1hr building the menu bar and navigation links and also fixing the auto-scroll cutting of the titles when you click on the buttons in the navigation in the top of the screen.
 - I tried using the infamous 'Lorem ipsum dolor sit amet' text to check if it worked and it did!
 
