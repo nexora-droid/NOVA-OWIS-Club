@@ -2,7 +2,7 @@
 
 This is the official Github Repository for NOVA, OWIS's tech and coding club.
 
-```<!---More descriptions to be added soon--->```
+```<!---More descriptions to be added soon, hopefully--->```
 
 ## Features
 ```<!---TO BE ADDED--->```
