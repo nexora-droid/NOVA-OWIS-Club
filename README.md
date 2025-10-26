@@ -9,7 +9,7 @@ This is the official Github Repository for NOVA, OWIS's tech and coding club.
 
 ## Note to HackClub Fraud Team
 
-I realised pretty late that we need to put regular commits after around 30mins-1hr of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos).
+I realised pretty late that we need to put regular commits after around 3hrs+ of coding time. And I have not done as such, so here are the list of details that I have done for each day of code I did! (sry i didn't take photos).
 Also everything after day 5 is through my commits.
 
 ### Logs of Updates/Days Spent Coding
