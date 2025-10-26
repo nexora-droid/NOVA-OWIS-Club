@@ -273,6 +273,7 @@
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             position: relative;
             cursor: pointer;
+            opacity: 0;
         }
 
         .partner-card img{
@@ -387,7 +388,7 @@
                 <div class="leaderid">
                     <img src="ashleshpfp.png" alt="Ashlesh Deshmukh" class="leader-img">
                     <h3 class="leader-name">Ashlesh Deshmukh</h3>
-                    <p class="leader-role">President and Head of Events</p>
+                    <p class="leader-role">President</p>
                     <p class="postnote">PFP is <span style="font-style: italic;">space-related</span> for privacy reasons!</p>
                 </div>
                 <div class="leaderid">
@@ -413,6 +414,13 @@
                     <h3 class="leader-name">Ms. Nathiya</h3> 
                     <p class="leader-role">Teacher Advisor</p>
                     <p class="postnote">PFP is a <span style="font-style: italic;">cat</span> for privacy reasons!</p>
+                </div>-->
+
+                <!--<div class="leaderid">
+                    <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="Mya Tharaphy" class="leader-img">
+                    <h3 class="leader-name">Mya Tharaphy</h3> 
+                    <p class="leader-role">Head of App Development</p>
+                    <p class="postnote">PFP is a <span style="font-style: italic;">xyz</span> for privacy reasons!</p>
                 </div>-->
             </div>
         </div>
@@ -451,7 +459,7 @@
     </div>
     <script>
         /* FADE UP ON LOAD ANIMATION */
-        const leaders = document.querySelectorAll('.leaderid');
+        const leaders = document.querySelectorAll('.leaderid, .partner-card');
         leaders.forEach((leader, index) => {
             leader.style.animation = 'fadeUp 0.8s ease forwards';
             leader.style.animationDelay = `${index * 0.3}s`;
