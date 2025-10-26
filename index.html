@@ -12,9 +12,10 @@
         }
 
         body {
-            background-color: white;
+            background-color: #F3F4F6; 
             margin: 0;
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: #111827;
         }
 
         /* NAVIGATION */
@@ -24,7 +25,9 @@
             left: 0;
             width: 100%;
             height: 60px;
-            background-color: coral;
+            background-color: #1D4ED8;
+            font-family: 'Fredoka', sans-serif;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,12 +53,14 @@
         #navlinks a {
             text-decoration: none;
             color: white;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
 
         #navlinks a:hover {
-            color: yellow;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: white;
         }
 
         #aboutus, #leader, #partner, #joinus, #vandm {
@@ -92,7 +97,7 @@
             display: flex;
             justify-content: center;
             align-items: center; 
-            background-image: linear-gradient(to right, blue, red);
+            background-image: linear-gradient(to right, #1D4ED8, #2563EB); 
             border-radius: 20px;
             width: 100px; 
             height: 40px;
@@ -231,11 +236,19 @@
             font-weight: 700;
             font-size: 1.1rem;
             margin: 8px 0 4px 0;
+            color: #111827;
         }
         
         .leader-role {
             color: gray;
             font-size: 0.95rem;
+            margin: 0;
+            color: #6B7280;
+        }
+
+        .postnote{
+            color: gray;
+            font-size: 0.5rem;
             margin: 0;
         }
 
@@ -294,6 +307,7 @@
             justify-content: center;
             align-items: center;
             margin-top: 20px;
+            margin-bottom: 50px;
         }
 
         #form iframe {
@@ -309,7 +323,6 @@
         <p id="name">NOVA</p>
         <div id="navlinks">
             <a href="#aboutus">About Us</a>
-            <a href="#vandm">Vision & Mission</a>
             <a href="#leader">Our Leaders</a>
             <a href="#partners">Our Partners</a>
             <a href="#join">Join us now!</a>
@@ -368,29 +381,34 @@
             <h2 class="subheading" id="leader">Our Leaders</h2>
             <div class="leader-container">
                 <div class="leaderid">
-                    <img src="ashlesh.jpg" alt="Ashlesh Deshmukh" class="leader-img">
+                    <img src="ashleshpfp.png" alt="Ashlesh Deshmukh" class="leader-img">
                     <h3 class="leader-name">Ashlesh Deshmukh</h3>
                     <p class="leader-role">President and Head of Events</p>
+                    <p class="postnote">PFP is <span style="font-style: italic;">space-related</span> for privacy reasons!</p>
                 </div>
                 <div class="leaderid">
-                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Krithish Prabhu" class="leader-img">
+                    <img src="kritishpfp.jpeg" alt="Krithish Prabhu" class="leader-img">
                     <h3 class="leader-name">Krithish Prabhu</h3>
                     <p class="leader-role">Secretary and Head of Web Development</p>
+                    <p class="postnote">PFP is a <span style="font-style: italic;">cat</span> for privacy reasons!</p>
                 </div>
                 <div class="leaderid">
                     <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Shaurya Upadhyaya" class="leader-img">
                     <h3 class="leader-name">Shaurya Upadhyaya</h3>
                     <p class="leader-role">Head of Web Development</p>
+                    <p class="postnote">PFP is a <span style="font-style: italic;">cat</span> for privacy reasons!</p>
                 </div>
                 <div class="leaderid">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Tanay Sivakumar" class="leader-img">
+                    <img src="tanaypfp.jpeg" alt="Tanay Sivakumar" class="leader-img">
                     <h3 class="leader-name">Tanay Sivakumar</h3>
                     <p class="leader-role">Head of Game Development</p>
+                    <p class="postnote">PFP is a <span style="font-style: italic;">duck</span> for privacy reasons!</p>
                 </div>
                 <div class="leaderid">
                     <img src="https://randomuser.me/api/portraits/women/81.jpg" alt="Ms. Nathiya" class="leader-img">
                     <h3 class="leader-name">Ms. Nathiya</h3> 
                     <p class="leader-role">Teacher Advisor</p>
+                    <p class="postnote">PFP is a <span style="font-style: italic;">cat</span> for privacy reasons!</p>
                 </div>
             </div>
         </div>
