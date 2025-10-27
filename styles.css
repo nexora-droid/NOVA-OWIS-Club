@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F3F4F6; 
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+}
+
+/* NAVIGATION */
+#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1D4ED8;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    font-weight: 600;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+#navigation #name {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#navlinks {
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+    flex-wrap: nowrap;
+}
+
+#navlinks a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#navlinks a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: white;
+}
+
+#aboutus, #leader, #partner, #joinus, #vandm {
+    scroll-margin-top: 80px;
+}
+
+/* CLUB IMAGE & NAMEBOX */
+#clubimage {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    display: flex;            
+    justify-content: center;  
+    align-items: center;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 60px;
+}
+
+#clubimage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('sample.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px);
+}
+
+#namebox {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-image: linear-gradient(to right, #1D4ED8, #2563EB); 
+    border-radius: 20px;
+    width: 100px; 
+    height: 40px;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.3s ease, border-radius 0.3s ease; 
+}
+
+#shortform, #fullform {
+    position: absolute; 
+    font-family: 'Fredoka', sans-serif;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+#shortform {
+    opacity: 1;
+    color: white;
+}
+
+#fullform { 
+    opacity: 0; 
+    color: white;
+}
+
+#namebox:hover {
+    width: 400px;
+    border-radius: 40px;
+}
+
+#namebox:hover #shortform { opacity: 0; }
+#namebox:hover #fullform { opacity: 1; }
+
+/* CONTENT */
+#content {
+    margin-left: max(20px, 2vw);
+    margin-right: max(20px, 2vw);
+    margin-top: 40px;
+}
+
+.subheading {
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 25px 0;
+    line-height: 1.7;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.05rem;
+    color: #222;
+}
+
+/* EXTRA STYLING FOR LEADER STYLE */
+#aboutnova .leaderid{
+    width: 280px;          
+    padding: 25px;
+}
+
+#aboutnova .leader-name{
+    font-size: 1.3rem;
+}
+
+#aboutnova .leader-role{
+    font-size: 1.05rem;
+}
+
+/* LEADERS */
+#leaders {
+    margin-top: 40px;
+}
+
+.leader-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+@keyframes fadeUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.leaderid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    width: 220px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 3px solid transparent;
+    opacity: 0;
+}
+
+.leaderid:hover {
+    transform: scale(1.03) translateY(-10px);
+    border: 3px solid #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+}
+
+.leader-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #3b82f6;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.leaderid:hover .leader-img {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+}
+
+.leader-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 8px 0 4px 0;
+    color: #111827;
+}
+
+.leader-role {
+    color: gray;
+    font-size: 0.95rem;
+    margin: 0;
+    color: #6B7280;
+}
+
+.postnote{
+    color: gray;
+    font-size: 0.5rem;
+    margin: 0;
+}
+
+/* PARTNERS */
+.partner-container{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.partner-card{
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.partner-card img{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.partner-card h3{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    max-width: 90%;
+}
+
+.partner-card:hover {
+    transform: scale(1.05); /* smooth scale on hover */
+    box-shadow: 0 12px 20px rgba(59, 130, 246, 0.5);
+}
+
+#hackclublink {
+    text-decoration: none;
+}
+
+#hackclublink:hover {
+    text-decoration: none;
+}
+
+/*FORM*/
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#form iframe {
+    width: 90%;
+    max-width: 600px;
+    height: 600px;
+}
